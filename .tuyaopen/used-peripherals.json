@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-15T09:52:53.882Z",
+  "source": "vibe",
+  "peripherals": [
+    "audio",
+    "button",
+    "display"
+  ]
+}

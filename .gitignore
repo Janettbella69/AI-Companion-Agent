@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+*.swp
+*~
+# TuyaOpen IDE — machine-local devplat bridge (auto-generated)
+.tuyaopen/ide/
+
+# ESP32-S3 motion controller local build and secrets
+source/esp32-motion/.pio/
+source/esp32-motion/include/secrets.h
+
+# ESP32-CAM local build output (Wi-Fi credentials are shared from the ignored T5 file)
+source/esp32-cam/.pio/
+
+# Tuya T5AI local network credentials and generated build output
+source/embedded/include/hshh_lan_secrets.h
+source/embedded/include/tuya_config_secrets.h
+source/embedded/.build/
+source/embedded/.cache/
+source/embedded/.target_logging/
+source/embedded/dist/
+
+# Agent runtime data and generated pet packs
+source/agent/var/
+source/agent/.env
+source/agent/node_modules/
+
+# Miniapp local dependencies and generated bundles
+source/miniapp/node_modules/
+source/miniapp/dist/

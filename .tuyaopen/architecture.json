@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.tuyaopen.dev/architecture.v1.json",
+  "schemaVersion": 1,
+  "surfaces": {
+    "embedded": {
+      "enabled": true,
+      "path": "source/embedded",
+      "scaffolded": true,
+      "platform": "t5ai",
+      "framework": "base",
+      "board": "SPARKLEIOT_T5AI_DEV",
+      "chip": "T5AI",
+      "entrypoint": {
+        "file": "source/embedded/src/tuya_app_main.c",
+        "symbol": "tuya_app_main"
+      },
+      "rtos": {
+        "kind": "tuya-tal",
+        "tasks": [
+          {
+            "name": "tuya_app_main",
+            "stackDepth": "1024 * 8",
+            "priority": "THREAD_PRIO_1"
+          },
+          {
+            "name": "hshh_iot",
+            "stackDepth": "1024 * 8",
+            "priority": "THREAD_PRIO_2"
+          },
+          {
+            "name": "hshh_lan",
+            "stackDepth": "1024 * 8",
+            "priority": "THREAD_PRIO_2"
+          }
+        ]
+      },
+      "memory": {
+        "stack": "tuya_app_main: 8 KiB; hshh_iot: 8 KiB; hshh_lan: 8 KiB",
+        "heap": null
+      },
+      "hardware": {
+        "peripherals": [],
+        "interfaces": [
+          "2.4 GHz Wi-Fi station",
+          "Tuya BLE provisioning"
+        ]
+      }
+    },
+    "miniapp": {
+      "enabled": true,
+      "path": "source/miniapp",
+      "scaffolded": false,
+      "panelKind": null,
+      "entrypoint": null
+    }
+  },
+  "modules": [
+    {
+      "id": "app",
+      "name": "Embedded application",
+      "kind": "executable",
+      "language": "C",
+      "sources": [
+        "source/embedded/src/"
+      ],
+      "surface": "embedded"
+    },
+    {
+      "id": "t5ai-provisioning",
+      "name": "Tuya BLE provisioning and cloud lifecycle",
+      "kind": "component",
+      "language": "C",
+      "sources": [
+        "source/embedded/src/app_hshh_provisioning.c",
+        "source/embedded/include/app_hshh_provisioning.h"
+      ],
+      "surface": "embedded"
+    },
+    {
+      "id": "t5ai-lan-client",
+      "name": "Signed ESP32-S3 LAN client",
+      "kind": "component",
+      "language": "C",
+      "sources": [
+        "source/embedded/src/app_hshh_lan.c",
+        "source/embedded/include/app_hshh_lan.h"
+      ],
+      "surface": "embedded"
+    },
+    {
+      "id": "panel",
+      "name": "Mini-app panel",
+      "kind": "component",
+      "language": "TypeScript",
+      "sources": [
+        "source/miniapp/"
+      ],
+      "surface": "miniapp"
+    },
+    {
+      "id": "esp32-motion",
+      "name": "Independent ESP32-S3 motion controller",
+      "kind": "executable",
+      "language": "C++",
+      "sources": [
+        "source/esp32-motion/src/"
+      ],
+      "surface": "embedded"
+    }
+  ],
+  "components": [],
+  "dependencies": [
+    {
+      "id": "tuyaopen-core",
+      "version": "main",
+      "kind": "core",
+      "surface": "embedded"
+    }
+  ]
+}

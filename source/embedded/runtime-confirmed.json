@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-08-16T03:15:35Z",
+  "target": "SPARKLEIOT_T5AI_DEV",
+  "firmware": {
+    "version": "1.0.0",
+    "artifact": "dist/HSHH-robot_1.0.0/HSHH-robot_QIO_1.0.0.bin",
+    "sha256": "b6f4377d88b54aaa53e7a0518131e3fb8a587059867a89c4d40e9a947b0e967f",
+    "buildResult": "success",
+    "flashResult": "success",
+    "flashPort": "/dev/cu.usbserial-110",
+    "flashBaud": 230400
+  },
+  "hostConnections": {
+    "note": "macOS device paths are ephemeral and must be re-detected after reconnecting",
+    "confirmedAt": "2026-08-16T05:17:00Z",
+    "serialPorts": {
+      "tuyaT5ai": "/dev/cu.usbserial-110",
+      "esp32Cam": "/dev/cu.usbserial-10",
+      "esp32S3": "/dev/cu.usbmodem2101"
+    }
+  },
+  "provisioningValidation": {
+    "result": "success",
+    "transport": "Tuya BLE netcfg",
+    "network": "two-phone 2.4 GHz personal hotspot",
+    "credentialsPersistedAcrossApplicationReflash": true,
+    "cloudOnlineConfirmedAt": "2026-08-16T03:15:35Z"
+  },
+  "networkValidation": {
+    "t5ai": {
+      "lastObservedIpv4": "172.20.10.3",
+      "pingReplies": 4,
+      "pingPackets": 4,
+      "identityEvidence": "ARP OUI prefix 2C:B4:71; inferred Tuya device"
+    },
+    "camera": {
+      "lastObservedIpv4": "172.20.10.7",
+      "healthz": {"service": "hshh-camera", "ready": true},
+      "observedAt": "2026-08-16T06:01:00Z"
+    },
+    "motionController": {
+      "lastObservedIpv4": "172.20.10.4",
+      "statusObservedAt": "2026-08-15T08:24:29.638Z",
+      "httpStatusVerifiedFromMac": true,
+      "reportedState": {
+        "safetyState": "stopped",
+        "motionStopped": true,
+        "motorReady": true,
+        "servoReady": false,
+        "activeSkill": null
+      }
+    }
+  },
+  "runtimeLogValidation": {
+    "result": "usb-cli-observed",
+    "downloadPortRole": "UART0",
+    "diagnosticCommand": "hshh_status",
+    "lastStatus": {
+      "stage": "cloud_online",
+      "wifiLinkUp": true,
+      "activated": true,
+      "mqttConnected": true,
+      "lastIotError": 0,
+      "resetReason": 0,
+      "uptimeSamplesMs": [31897, 45557]
+    },
+    "applicationLogRole": "UART1",
+    "applicationLogBaud": 460800,
+    "applicationLogPins": {
+      "tx": 0,
+      "rx": 1
+    },
+    "signedBootStopDirectlyObserved": false,
+    "note": "The secret-safe status command is available on the USB UART0 CLI. A 3.3 V USB-to-UART adapter on UART1 is still required for full PR_* application logs."
+  },
+  "safety": {
+    "autonomousMotionEnabled": false,
+    "lastObservedMotionState": "stopped"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-16T05:17:00Z",
+  "source": "user-confirmed-and-runtime-verified",
+  "controller": {
+    "board": "YD-ESP32-23 / YD-ESP32-S3",
+    "module": "ESP32-S3-WROOM-1-N16R8",
+    "flashBytes": 16777216,
+    "psramBytes": 8388608
+  },
+  "peripherals": [
+    {
+      "id": "tc1508-drive",
+      "category": "dual-dc-motor-driver",
+      "chip": "TC1508",
+      "status": "confirmed",
+      "note": "User confirmed 2026-08-16: ESP32-S3 IN1-IN4 are wired to TC1508, not MX1508. Same dual-H-bridge IN logic. Module typically has no power LED.",
+      "pins": [
+        { "role": "motor_a_in1", "gpio": 10 },
+        { "role": "motor_a_in2", "gpio": 11 },
+        { "role": "motor_b_in3", "gpio": 12 },
+        { "role": "motor_b_in4", "gpio": 13 }
+      ],
+      "motors": {
+        "count": 2,
+        "type": "EMC noise-suppressed TT geared DC motor",
+        "publishedNoLoadPoints": [
+          { "voltage": 3, "maxCurrentMilliamps": 130, "speedRpm": 42 },
+          { "voltage": 6, "maxCurrentMilliamps": 220, "speedRpm": 84 }
+        ],
+        "stallCurrent": null
+      },
+      "pwmHz": 1000,
+      "startupState": "all-inputs-low"
+    },
+    {
+      "id": "sg90-hug-servo",
+      "category": "servo",
+      "status": "user-confirmed-wired-runtime-unverified",
+      "pins": [{ "role": "signal", "gpio": 17 }],
+      "pwmHz": 50,
+      "power": {
+        "voltage": 5,
+        "source": "external",
+        "commonGroundWithEsp32": true,
+        "poweredFromEsp32Board": false
+      }
+    }
+  ],
+  "plannedButUnconfirmed": [
+    "hc-sr04",
+    "bno055",
+    "apds9960"
+  ],
+  "sensorScope": {
+    "status": "deferred-out-of-p0",
+    "decidedAt": "2026-08-16T05:18:00Z",
+    "reason": "User deferred HC-SR04, BNO055, and APDS9960 due to schedule. Do not implement or unlock sensor-gated motion/hug acceptance in this pass.",
+    "autonomousMotionEnabled": false
+  },
+  "power": {
+    "benchSupply": "PPMD20 power bank",
+    "voltage": 5,
+    "totalOutputAmps": 2.4,
+    "limitations": [
+      "5 V is within the motor's published 3 V to 6 V operating points",
+      "Bench testing only until motor stall current is measured",
+      "All outputs share the same 2.4 A total limit",
+      "Motor and servo current must not pass through the ESP32 board",
+      "ESP32 and actuator supplies must share ground"
+    ]
+  },
+  "hostConnections": {
+    "note": "macOS device paths are ephemeral and must be re-detected after reconnecting",
+    "serialPorts": {
+      "tuyaT5ai": {
+        "path": "/dev/cu.usbserial-110",
+        "status": "user-confirmed"
+      },
+      "esp32Cam": {
+        "path": "/dev/cu.usbserial-10",
+        "status": "user-confirmed"
+      },
+      "esp32S3": {
+        "path": "/dev/cu.usbmodem2101",
+        "usbId": "1A86:55D3",
+        "status": "user-confirmed"
+      }
+    }
+  },
+  "firmware": {
+    "environment": "yd_esp32_s3_safe",
+    "flashedAt": "2026-08-15T05:52:14Z",
+    "sha256": "5857a1647924630e2dc3662d6ddf8efcf7d4ae6a8b1b8e6b6950971f84214459",
+    "validation": {
+      "flashHashVerified": true,
+      "startupInputsLow": true,
+      "wifiConnected": true,
+      "mdnsHostname": "hshh-motion.local",
+      "lastObservedIpv4": "172.20.10.4",
+      "httpStatusVerifiedFromMac": true,
+      "reportedState": {
+        "safetyState": "stopped",
+        "motionStopped": true,
+        "motorReady": true,
+        "servoReady": false,
+        "activeSkill": null
+      }
+    }
+  },
+  "safety": {
+    "autonomousMotionEnabled": false,
+    "reason": "Distance and pose sensors are not confirmed or wired",
+    "flashDefault": "actuators stopped; all TC1508 inputs low"
+  }
+}

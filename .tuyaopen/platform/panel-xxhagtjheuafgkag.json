@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "pid": "xxhagtjheuafgkag",
+  "fetchedAt": "2026-08-17T05:33:21.783Z",
+  "source": "tuya-devplat-cli",
+  "panelList": {
+    "data": {
+      "dataList": [
+        {
+          "uiId": "000002gq0j",
+          "panelName": "SS200 AI Speaker",
+          "panelIcon": "smart/ui_design_pkg_icon/non-session-user/174523238111baa5f12c2.png",
+          "uiType": 1,
+          "panelType": 8,
+          "panelEnabled": 1,
+          "productId": "xxhagtjheuafgkag",
+          "productName": "",
+          "miniappId": "tyonojin7dhnlh5b2e"
+        }
+      ]
+    }
+  },
+  "productPanelList": {
+    "ok": true,
+    "data": [
+      {
+        "code": "PUBLIC",
+        "count": 1,
+        "name": "公版面板",
+        "order": 1
+      },
+      {
+        "code": "PRIVATE",
+        "count": 0,
+        "name": "自定义面板",
+        "order": 2
+      },
+      {
+        "code": "AI_PANEL",
+        "count": 0,
+        "name": "AI面板",
+        "order": 3
+      },
+      {
+        "code": "CUSTOM",
+        "count": 0,
+        "name": "定制面板",
+        "order": 4
+      },
+      {
+        "code": "STUDIO",
+        "count": 0,
+        "name": "studio面板",
+        "order": 5
+      }
+    ],
+    "meta": {
+      "region": "AY",
+      "gateway": "/micro-app/pmg",
+      "url": "/api/product/ui/menu/list",
+      "method": "POST",
+      "elapsed_ms": 273,
+      "dry_run": false,
+      "mutating": false,
+      "request_preview": {
+        "method": "POST",
+        "gateway": "/micro-app/pmg",
+        "url": "/api/product/ui/menu/list",
+        "body": {
+          "productId": "xxhagtjheuafgkag"
+        }
+      }
+    }
+  },
+  "panelDpList": {
+    "ok": true,
+    "data": [
+      {
+        "code": "exit_voice_conversation2",
+        "defaultValue": "",
+        "dpId": 4,
+        "name": "exit_voice_conversation",
+        "property": {
+          "type": "bool"
+        },
+        "subtype": "bool"
+      },
+      {
+        "code": "voice_vol",
+        "defaultValue": "",
+        "dpId": 203,
+        "name": "Voice Vol",
+        "property": {
+          "max": 100,
+          "min": 0,
+          "scale": 0,
+          "step": 1,
+          "type": "value"
+        },
+        "subtype": "value"
+      },
+      {
+        "code": "voice_mic",
+        "defaultValue": "",
+        "dpId": 204,
+        "name": "Voice Mic",
+        "property": {
+          "type": "bool"
+        },
+        "subtype": "bool"
+      },
+      {
+        "code": "voice_play",
+        "defaultValue": "",
+        "dpId": 205,
+        "name": "Voice Play",
+        "property": {
+          "type": "bool"
+        },
+        "subtype": "bool"
+      },
+      {
+        "code": "voice_bt_play",
+        "defaultValue": "",
+        "dpId": 206,
+        "name": "Voice Bt Play",
+        "property": {
+          "type": "bool"
+        },
+        "subtype": "bool"
+      }
+    ],
+    "meta": {
+      "region": "AY",
+      "gateway": "/micro-app/exp",
+      "url": "/api/product/device/page/dp/list",
+      "method": "POST",
+      "elapsed_ms": 253,
+      "dry_run": false,
+      "mutating": false,
+      "request_preview": {
+        "method": "POST",
+        "gateway": "/micro-app/exp",
+        "url": "/api/product/device/page/dp/list",
+        "body": {
+          "productId": "xxhagtjheuafgkag"
+        }
+      }
+    }
+  },
+  "deviceId": ""
+}

@@ -1,0 +1,9 @@
+build/
+.cache/
+include/tuya_config_secrets.h
+*.o
+*.a
+*.elf
+*.bin
+*.map
+*.hex

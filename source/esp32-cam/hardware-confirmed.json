@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-16T05:57:09Z",
+  "source": "user-confirmed-serial-mapping",
+  "controller": {
+    "board": "AI Thinker ESP32-CAM",
+    "module": "ESP32-S",
+    "flashBytes": 4194304,
+    "psramBytes": 4194304
+  },
+  "camera": {
+    "sensor": "GC2145",
+    "datasheetClaimed": "OV2640",
+    "pid": "0x2145",
+    "megapixels": 2,
+    "interface": "DVP",
+    "runtimeFormat": "rgb565",
+    "runtimeFrame": "320x240",
+    "pins": {
+      "pwdn": 32,
+      "reset": -1,
+      "xclk": 0,
+      "siod": 26,
+      "sioc": 27,
+      "y9": 35,
+      "y8": 34,
+      "y7": 39,
+      "y6": 36,
+      "y5": 21,
+      "y4": 19,
+      "y3": 18,
+      "y2": 5,
+      "vsync": 25,
+      "href": 23,
+      "pclk": 22
+    }
+  },
+  "serial": {
+    "path": "/dev/cu.usbserial-10",
+    "usbId": "1A86:7523",
+    "usbInterface": 0,
+    "status": "user-confirmed",
+    "previousPath": "/dev/cu.usbserial-110",
+    "note": "macOS /dev/cu.* paths are ephemeral. 2026-08-16 user confirmation: CAM=/dev/cu.usbserial-10, T5=/dev/cu.usbserial-110, S3=/dev/cu.usbmodem2101."
+  },
+  "firmware": {
+    "environment": "ai-thinker-esp32-cam",
+    "status": "flashed",
+    "artifact": ".pio/build/ai-thinker-esp32-cam/firmware.bin",
+    "artifactBytes": 934704,
+    "sha256": "851341011349f3ca11837f041c008e04a8c05e8f52ee6e3efb7e940706995f45",
+    "lastFlashAttempt": {
+      "at": "2026-08-16T05:57:09Z",
+      "result": "success",
+      "port": "/dev/cu.usbserial-10",
+      "chip": "ESP32-D0WD-V3",
+      "mac": "44:1d:64:5c:29:80",
+      "bytesWritten": 934704,
+      "hashesVerified": true
+    },
+    "lastBoot": {
+      "at": "2026-08-16T06:01:00Z",
+      "cameraInit": "ok",
+      "wifi": "connected",
+      "ip": "172.20.10.7",
+      "healthz": {"service": "hshh-camera", "ready": true}
+    }
+  },
+  "notes": [
+    "Runtime probe reports GC2145 (PID 0x2145), not OV2640. JPEG is unsupported; RGB565 QVGA plus software JPEG conversion is used.",
+    "Apple USB-CH340 does not auto-reset; enter download mode by holding IO0 while power-cycling USB."
+  ]
+}

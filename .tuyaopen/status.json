@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.tuyaopen.dev/status.v1.json",
+  "schemaVersion": 1,
+  "lifecycle": "built",
+  "scaffold": {
+    "method": "ide-stub",
+    "sourceTemplate": "base",
+    "scaffoldedAt": "2026-08-14T12:29:44.959Z",
+    "sdkRoot": null,
+    "kconfigId": "SPARKLEIOT_T5AI_DEV"
+  },
+  "build": {
+    "lastResult": "success",
+    "lastBuildAt": "2026-08-16T10:11:00Z",
+    "artifact": "source/embedded/dist/HSHH-robot_1.0.0/HSHH-robot_QIO_1.0.0.bin",
+    "warnings": 427,
+    "errors": 0
+  },
+  "flash": {
+    "lastResult": "failed",
+    "lastFlashAt": "2026-08-16T10:11:55Z",
+    "target": "SPARKLEIOT_T5AI_DEV",
+    "port": "/dev/cu.usbserial-110",
+    "baud": 230400,
+    "artifactSha256": "e2005874c5d7b53e8558adda6491d05479b6cc6b908f56f1fdbecf4ef57dc489"
+  },
+  "lastChecked": {
+    "tos": "2026-08-16T03:15:35Z",
+    "env": "2026-08-16T03:15:35Z"
+  }
+}

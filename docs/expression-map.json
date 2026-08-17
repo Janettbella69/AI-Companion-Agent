@@ -1,0 +1,13 @@
+{
+  "boot": "noticed",
+  "idle": "idle",
+  "wake_word": "noticed",
+  "microphone_active": "listening",
+  "waiting_for_ai": "thinking",
+  "positive_reply": "happy",
+  "uncertain_reply": "confused",
+  "negative_reply": "sad",
+  "angry_reply": "angry",
+  "friendly_reply": "happy",
+  "timeout": "sleeping"
+}
