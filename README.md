@@ -1,6 +1,6 @@
-# HSHH-robot
+# AI-Companion-Agent
 
-HSHH 是可主动靠近、可邀请拥抱、支持宠物照片形象和可控长期记忆的 AI
+AI-Companion-Agent是可主动靠近、可邀请拥抱、支持宠物照片形象和可控长期记忆的 AI
 陪伴宠物。产品与技术基线以 `docs/HSHH-robot_PRD.md` v0.4 为准。
 当前构建产物、配置项和真机硬件门禁见 `docs/P0-READINESS.md`。
 对外作品定位（Project HUG / PRD v0.2）见 `docs/README-project-hug.md`。
